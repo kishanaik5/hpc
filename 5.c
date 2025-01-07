@@ -1,26 +1,15 @@
 #include <stdio.h>
 #include <omp.h>
 
-void process(int i) {
-    printf("Processing Element %d by thread %d\n", i, omp_get_thread_num());
-}
+int counter = 0;
+
+#pragma omp threadprivate(counter)
 
 int main() {
-    int n = 10;
-
     #pragma omp parallel
     {
-        #pragma omp single
-        {
-            for (int i = 0; i < n; i++) {
-                #pragma omp task firstprivate(i)
-                {
-                    process(i);
-                }
-            }
-        }
-        #pragma omp taskwait 
+        counter++;
+        printf("Thread %d counter = %d \n",omp_get_thread_num(),counter);
     }
-
     return 0;
 }
