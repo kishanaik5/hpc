@@ -5,20 +5,11 @@ int main() {
     #pragma omp parallel
     {
         #pragma omp single
-	        {
+	        { for(int i =0;i<5;i++){
             #pragma omp task
             {
-                printf("Task 1 executed by thread %d\n", omp_get_thread_num());
-            }
-
-            #pragma omp task
-            {
-                printf("Task 2 executed by thread %d\n", omp_get_thread_num());
-            }
-
-            printf("Main thread continues here: %d\n", omp_get_thread_num());
-        } 
-    }
+                printf("Task %d executed by thread %d\n", i, omp_get_thread_num());
+	    }}}}
 
     return 0;
 }
