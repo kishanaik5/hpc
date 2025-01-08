@@ -13,3 +13,15 @@
 7. Programs for Point to Point MPI calls.
 
 8. CUDA programs on broadcasting
+
+OpenMP 
+Compile : gcc -fopenmp <filename>.c
+Exec : ./a.out
+
+Cuda 
+Compile : nvcc <filename>.c
+Exec : ./a.out
+
+MPI Programs
+Compile : mpicc <filename>.c
+Exec : mpirun ./a.out
