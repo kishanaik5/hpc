@@ -15,13 +15,13 @@
 8. CUDA programs on broadcasting
 
 OpenMP 
-Compile : gcc -fopenmp <filename>.c
+Compile : gcc -fopenmp filename.c
 Exec : ./a.out
 
 Cuda 
-Compile : nvcc <filename>.c
+Compile : nvcc filename.c
 Exec : ./a.out
 
 MPI Programs
-Compile : mpicc <filename>.c
+Compile : mpicc filename.c
 Exec : mpirun ./a.out
